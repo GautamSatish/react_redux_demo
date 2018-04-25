@@ -1,5 +1,7 @@
 # React Redux Demo
 
+<a href="https://snyk.io/test/github/gautamsatish/react_redux_demo?targetFile=package.json"><img src="https://snyk.io/test/github/gautamsatish/react_redux_demo/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/gautamsatish/react_redux_demo?targetFile=package.json" style="max-width:100%;"></a>
+
 This is a basic hands-on exericse intended to familiarize users with the Redux in React apps.
 
 To get started,
