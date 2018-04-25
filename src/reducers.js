@@ -8,10 +8,16 @@ const initialState = {
 // Use Object.assign or the spread operator: { ...state, ...newState }
 
 export default function todoApp(state = initialState, action) {
+  let newValue;
   switch (action.type) {
     case COUNTER_INCREMENT:
-      // return new copy of state with coounter incremented
-    case ...
+      return { ...state, counterState: (state.counterState + action.incrValue) };
+    case COUNTER_DECREMENT:
+      newValue = state.counterState - 1;
+      if (newValue < 0) {
+        newValue = 0;
+      }
+      return { ...state, counterState: newValue };
     default:
       return state;
   }

@@ -7,7 +7,15 @@ export const COUNTER_DECREMENT = 'COUNTER_DECREMENT';
 // should increment or decrement respectively.
 
 export function increment() {
+  return {
+    type: COUNTER_INCREMENT,
+    incrValue: 1,
+  };
 }
 
 export function decrement() {
+  return {
+    type: COUNTER_DECREMENT,
+    decrValue: 1,
+  };
 }

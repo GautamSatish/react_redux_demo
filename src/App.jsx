@@ -12,17 +12,12 @@ import { increment, decrement } from './actions';
 // Implement the mapStateToProps and mapDispatchToProps functions.
 // mapStateToProps (state) => (JSON object mapping of prop to redux state property).
 
-const mapStateToProps = state => {
-  return {
-    someProp: state.storeProperty
-  }
-}
+const mapStateToProps = state => ({ counterProp: state.counterState });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onClick: id => { dispatch(actionCreatedToBeInvoked(params)) }
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  _increment: () => { dispatch(increment()) },
+  _decrement: () => { dispatch(decrement()) }
+});
 
 // mapDispatchToProps (dispatch) => (JSON object of callback props).
 
@@ -30,29 +25,6 @@ const mapDispatchToProps = dispatch => {
 // const wrapperComponent = connect(mapStateToProps, mapDispatchToProps)(originalComponent).
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this._increment = this._increment.bind(this);
-    this._decrement = this._decrement.bind(this);
-
-    this.state = {
-      counter: 0,
-    };
-  }
-
-  _increment() {
-    this.setState({ counter: (this.state.counter + 1) });
-  }
-
-  _decrement() {
-    let newValue = this.state.counter - 1;
-
-    if (newValue < 0) {
-      newValue = 0;
-    }
-
-    this.setState({ counter: newValue });
-  }
   render() {
     return (
       <div>
@@ -66,7 +38,7 @@ class App extends React.Component {
           separator="all"
         >
           <Box separator="all" pad="medium">
-            <Label><h1>{this.state.counter}</h1></Label>
+            <Label><h1>{this.props.counterProp}</h1></Label>
           </Box>
           <Box
             justify="between"
@@ -79,7 +51,7 @@ class App extends React.Component {
               <Button
                 icon={<FormSubtractIcon />}
                 label="Decrement"
-                onClick={this._decrement}
+                onClick={this.props._decrement}
                 primary
               />
             </Box>
@@ -87,7 +59,7 @@ class App extends React.Component {
               <Button
                 icon={<FormAddIcon />}
                 label="Increment"
-                onClick={this._increment}
+                onClick={this.props._increment}
                 primary
               />
             </Box>
@@ -97,5 +69,4 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
