@@ -9,6 +9,14 @@ To get started,
 2. Install the dependencies: npm install
 3. Start the webpack dev server: npm run dev
 
-[TBD]]
+This should launch your app at http://localhost:9000/
+
+The app implements a simple counter with one button to increment and another to decrement the counter value. This is implemented using the React state. The exercise is to use Redux to accomplish the same.
+
+What you need to do:
+1. Complete the action creator function implementation in src/actions.js.
+2. Complete the reducer function in src/reducers.js.
+3. Create store and pass it to the Provider wrapper component in src/index.js.
+4. Implement the mapStateToProps and mapDispatchToProps functions, update the App component and connect the wrapper component in src/App.jsx.
 
 A sample solution is present on the branch ```sample_solution```.
