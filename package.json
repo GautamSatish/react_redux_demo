@@ -1,5 +1,5 @@
 {
-  "name": "react_router_demo",
+  "name": "react_redux_demo",
   "version": "1.0.0",
   "description": "Sample code that illustrates how to use Redux in a React app",
   "main": "index.js",
