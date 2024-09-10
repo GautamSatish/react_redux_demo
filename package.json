@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/GautamSatish/react_redux_demo#readme",
   "dependencies": {
-    "grommet": "^1.10.1",
+    "grommet": "^2.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.3",
     "react-redux": "^5.0.7",
